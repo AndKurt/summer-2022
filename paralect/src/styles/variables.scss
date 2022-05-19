@@ -1,0 +1,66 @@
+//Colors
+$blue: #0064eb;
+$grey: #f9f9f9;
+
+//Font-size
+@mixin text14 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+@mixin text16 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin text18 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin text22 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+}
+
+@mixin text24 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin text26 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+}
+
+@mixin text32 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+// FlexBox
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-align-center;
+  flex-direction: column;
+}
+
+@mixin flex-column-center-center {
+  @include flex-column-center;
+  justify-content: center;
+}
