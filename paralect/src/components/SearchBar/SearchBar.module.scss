@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.search {
+  max-width: 500px;
+  width: 100%;
+  height: 56px;
+  position: relative;
+
+  .searchIcon {
+    position: absolute;
+    top: 13px;
+    left: 19px;
+  }
+
+  input[type='text'] {
+    @include text14;
+    height: 40px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 8px 44px;
+    color: #000;
+    outline: none;
+    letter-spacing: 0.04em;
+
+    &::placeholder {
+      @include text14;
+      color: $grey;
+      letter-spacing: 0.04em;
+    }
+  }
+}

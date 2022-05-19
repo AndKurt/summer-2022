@@ -65,3 +65,9 @@ $light-grey: #f9f9f9;
   @include flex-column-center;
   justify-content: center;
 }
+
+//container
+@mixin container {
+  max-width: 1366px;
+  width: 100%;
+}

@@ -1,1 +1,26 @@
 @import '../../styles/variables.scss';
+
+.initialPage {
+  @include flex-align-center;
+  flex-direction: column;
+  height: 100%;
+
+  .container {
+    @include container;
+    @include flex-column-center-center;
+    margin-top: -6px;
+    padding: 28px 56px;
+    height: 100%;
+
+    img {
+      margin-bottom: 46px;
+    }
+
+    p {
+      @include text22;
+      text-align: center;
+      color: $grey;
+      width: 210px;
+    }
+  }
+}
