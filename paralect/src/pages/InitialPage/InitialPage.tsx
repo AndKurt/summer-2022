@@ -9,7 +9,7 @@ export const InitialPage = () => {
       <Header />
       <div className={styles.container}>
         <img src={searchBig} alt="searchBig" />
-        <p>Start with searching a GitHub user</p>
+        <h1>Start with searching a GitHub user</h1>
       </div>
     </main>
   );

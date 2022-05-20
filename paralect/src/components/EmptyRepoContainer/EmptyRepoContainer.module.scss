@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.emptyRepoContainer {
+  @include flex-column-center-center;
+  max-width: 877px;
+  width: 100%;
+  max-height: 529px;
+
+  img {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    @include text22;
+    text-align: center;
+    color: $grey;
+    width: 300px;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.itemRepo {
+  @include text16;
+  list-style: none;
+  padding: 24px 30px;
+  background-color: #fff;
+  margin-bottom: 24px;
+
+  h4 {
+    @include text24;
+    color: $blue;
+    margin-bottom: 16px;
+  }
+}

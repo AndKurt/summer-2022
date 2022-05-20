@@ -1,1 +1,15 @@
 @import '../../styles/variables.scss';
+
+.mainPage {
+  @include flex-align-center;
+  flex-direction: column;
+  height: 100%;
+
+  .container {
+    @include container;
+    padding: 100px 56px 28px 56px;
+    height: 100%;
+    display: flex;
+    gap: 0 79px;
+  }
+}

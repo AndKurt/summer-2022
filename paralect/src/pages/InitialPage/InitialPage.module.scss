@@ -8,15 +8,14 @@
   .container {
     @include container;
     @include flex-column-center-center;
-    margin-top: -6px;
-    padding: 28px 56px;
+    padding: 16px 56px 28px 56px;
     height: 100%;
 
     img {
       margin-bottom: 46px;
     }
 
-    p {
+    h1 {
       @include text22;
       text-align: center;
       color: $grey;

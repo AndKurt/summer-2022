@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.repoContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 877px;
+  width: 100%;
+
+  h2 {
+    @include text32;
+    margin-bottom: 29px;
+  }
+
+  .listRepos {
+    display: flex;
+    flex-direction: column;
+  }
+}
