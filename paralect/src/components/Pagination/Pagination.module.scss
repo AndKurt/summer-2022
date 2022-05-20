@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.paginationContainer {
+  display: flex;
+  justify-content: flex-end;
+
+  .pagination {
+    @include flex-align-center;
+    list-style: none;
+    height: 25px;
+    gap: 0 16px;
+    margin-right: 13px;
+  }
+}

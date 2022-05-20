@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { InitialPage, MainPage, NotFoundPage } from '../pages';
+import { EmptyStatePage, InitialPage, MainPage, NotFoundPage } from '../pages';
 
 export const Router = () => {
   return (
@@ -8,8 +8,9 @@ export const Router = () => {
       <Route path="/" element={<InitialPage />} />
       <Route path="/main/" element={<MainPage />} />
       <Route path="/main/:userName" element={<MainPage />} />
-      <Route path="/notFound" element={<NotFoundPage />} />
-      <Route path="*" element={<Navigate to="/notFound" />} />
+      <Route path="/empty-state" element={<EmptyStatePage />} />
+      <Route path="/not-found" element={<NotFoundPage />} />
+      <Route path="*" element={<Navigate to="/not-found" />} />
     </Routes>
   );
 };

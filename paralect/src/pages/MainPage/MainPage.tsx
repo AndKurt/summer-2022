@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { EmptyRepoContainer, Header, InfoContainer, Loader, RepoContainer } from '../../components';
+import { Header, InfoContainer, Loader, Pagination, RepoContainer } from '../../components';
 import { fetchRepos } from '../../redux/actions/reposActions';
 import { fetchUser } from '../../redux/actions/userAction';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
@@ -18,39 +18,48 @@ export const MainPage = () => {
   const { isLoading: isLoaddingRepos } = useAppSelector((state) => state.reposReducer);
 
   useEffect(() => {
-    if (isError) {
-      navigation('/notFound');
-    }
-  }, [navigation, isError]);
-
-  useEffect(() => {
+    console.log(1);
     if (userName) {
       dispatch(fetchUser(userName));
     }
   }, [userName, dispatch]);
 
   useEffect(() => {
+    console.log(2);
+    if (isError) {
+      navigation('/not-found');
+    }
+  }, [navigation, isError]);
+
+  useEffect(() => {
+    console.log(userData);
+
+    console.log(userData?.public_repos);
     if (userName) {
       if (userData?.public_repos) {
         dispatch(fetchRepos({ userName: userName }));
       }
     }
-  }, [userName, dispatch, userData?.public_repos]);
+  }, [userName, dispatch, userData, navigation]);
+
+  //useEffect(() => {
+  //  console.log(userData?.public_repos);
+  //  if (!userData?.public_repos) {
+  //    navigation('/empty-state');
+  //  }
+  //}, [userData, navigation]);
 
   return (
     <main className={styles.mainPage}>
+      {isLoaddingUser || (isLoaddingRepos && <Loader />)}
       <Header />
-      {(isLoaddingUser || isLoaddingRepos) && (
-        <div className={styles.loaderContainer}>
-          <Loader />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {<InfoContainer />}
+          <RepoContainer />
         </div>
-      )}
-      {(!isLoaddingUser || !isLoaddingRepos) && userData && (
-        <div className={styles.container}>
-          <InfoContainer />
-          {userData.public_repos ? <RepoContainer /> : <EmptyRepoContainer />}
-        </div>
-      )}
+        <Pagination />
+      </div>
     </main>
   );
 };

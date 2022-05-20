@@ -9,7 +9,9 @@ export const SearchBar = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigation(`/main/${userName}`);
+    if (userName) {
+      navigation(`/main/${userName}`);
+    }
   };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,3 +6,4 @@ export { RepoContainer } from './RepoContainer/RepoContainer';
 export { EmptyRepoContainer } from './EmptyRepoContainer/EmptyRepoContainer';
 export { ListItemRepo } from './ListItemRepo/ListItemRepo';
 export { Loader } from './Loader/Loader';
+export { Pagination } from './Pagination/Pagination';

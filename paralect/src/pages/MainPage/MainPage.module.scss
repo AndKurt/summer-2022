@@ -7,14 +7,18 @@
 
   .container {
     @include container;
+    min-height: 768px;
     padding: 100px 56px 28px 56px;
     height: 100%;
     display: flex;
-    gap: 0 79px;
-  }
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
 
-  .loaderContainer {
-    @include flex-align-center;
-    height: 100%;
+    .content {
+      display: flex;
+      gap: 0 79px;
+    }
   }
 }

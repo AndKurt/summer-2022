@@ -5,13 +5,13 @@ import { fetchUser } from '../actions/userAction';
 interface IUserStore {
   isLoading: boolean;
   userData: IUserDataFromApi | null;
-  isError: boolean;
+  isError: string;
 }
 
 const initialState: IUserStore = {
   isLoading: false,
   userData: null,
-  isError: false,
+  isError: '',
 };
 
 export const userSlice = createSlice({
@@ -21,16 +21,18 @@ export const userSlice = createSlice({
   extraReducers: {
     [fetchUser.pending.type]: (state) => {
       state.isLoading = true;
-      state.isError = false;
+      state.userData = null;
+      state.isError = '';
     },
     [fetchUser.fulfilled.type]: (state, action: PayloadAction<IUserDataFromApi>) => {
       state.isLoading = false;
       state.userData = action.payload;
-      state.isError = false;
+      state.isError = '';
     },
-    [fetchUser.rejected.type]: (state) => {
+    [fetchUser.rejected.type]: (state, action: PayloadAction<string>) => {
       state.isLoading = false;
-      state.isError = true;
+      state.userData = null;
+      state.isError = action.payload;
     },
   },
 });
