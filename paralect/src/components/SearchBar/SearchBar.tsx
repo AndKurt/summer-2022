@@ -1,11 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './SearchBar.module.scss';
 import searchSmall from '../../assets/img/svg/searchSmall.svg';
 import { useNavigate } from 'react-router-dom';
 
 export const SearchBar = () => {
   const [userName, setUserName] = useState('');
-  const inputRef = useRef<HTMLInputElement | null>(null);
   const navigation = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,7 +29,6 @@ export const SearchBar = () => {
         placeholder="Enter GitHub username"
         autoComplete="off"
         autoFocus
-        ref={inputRef}
       />
     </form>
   );

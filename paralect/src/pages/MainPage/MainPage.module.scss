@@ -12,4 +12,9 @@
     display: flex;
     gap: 0 79px;
   }
+
+  .loaderContainer {
+    @include flex-align-center;
+    height: 100%;
+  }
 }
