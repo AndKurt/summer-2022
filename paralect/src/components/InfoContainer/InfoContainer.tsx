@@ -9,7 +9,9 @@ export const InfoContainer = () => {
     <div className={styles.infoContainer}>
       <img className={styles.userAvatar} src={testImg} alt="user-avatar" />
       <h3>Dan Abramov</h3>
-      <a href="#">gaearon</a>
+      <a href="#" rel="noreferrer noopener">
+        gaearon
+      </a>
       <div className={styles.folowerContainer}>
         <div className={styles.followers}>
           <img src={followers} alt="followers" />

@@ -1,1 +1,25 @@
 @import '../../styles/variables.scss';
+
+.notFoundPage {
+  @include flex-align-center;
+  flex-direction: column;
+  height: 100%;
+
+  .container {
+    @include container;
+    @include flex-column-center-center;
+    padding: 10px 56px 28px 56px;
+    height: 100%;
+
+    img {
+      margin-bottom: 41px;
+    }
+
+    h1 {
+      @include text22;
+      text-align: center;
+      color: $grey;
+      width: 210px;
+    }
+  }
+}

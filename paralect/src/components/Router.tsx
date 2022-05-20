@@ -6,7 +6,6 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<InitialPage />} />
-      <Route path="/:userName" element={<MainPage />} />
       <Route path="/main/:userName" element={<MainPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
