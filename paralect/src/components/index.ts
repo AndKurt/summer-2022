@@ -7,3 +7,4 @@ export { EmptyRepoContainer } from './EmptyRepoContainer/EmptyRepoContainer';
 export { ListItemRepo } from './ListItemRepo/ListItemRepo';
 export { Loader } from './Loader/Loader';
 export { Pagination } from './Pagination/Pagination';
+export { ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
