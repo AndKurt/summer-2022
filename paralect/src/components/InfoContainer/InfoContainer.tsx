@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './InfoContainer.module.scss';
 import followersIco from '../../assets/img/svg/followers.svg';
 import followingIco from '../../assets/img/svg/following.svg';
-import { numberRounding } from '../utils';
+import { numberRounding } from '../../utils';
 import { useAppSelector } from '../../redux/hooks';
 
 export const InfoContainer = () => {

@@ -5,8 +5,8 @@ import emptyRepo from '../../assets/img/svg/emptyRepo.svg';
 export const EmptyRepoContainer = () => {
   return (
     <div className={styles.emptyRepoContainer}>
-      <img src={emptyRepo} alt="emptyRepo-img" />
-      <h1>Repository list is empty</h1>
+      <img src={emptyRepo} alt="emptyRepo-img" className={styles.emptyImg} />
+      <h2>Repository list is empty</h2>
     </div>
   );
 };

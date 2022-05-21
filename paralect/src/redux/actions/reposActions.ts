@@ -16,7 +16,7 @@ export const fetchRepos = createAsyncThunk(
       `${BASE_URL}${userName}/repos?per_page=${REPOS_PER_PAGE}&page=${currentPage}`,
       {
         headers: {
-          Authorization: `Token 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`,
+          Authorization: `Token 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`,
         },
       }
     );

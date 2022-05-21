@@ -47,6 +47,10 @@
     @include text14;
     @include flex-column-center;
 
+    a {
+      margin-bottom: 15px;
+    }
+
     .userAvatar {
       width: 200px;
     }

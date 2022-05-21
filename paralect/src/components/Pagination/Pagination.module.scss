@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .paginationContainer {
+  @include text14;
   @include flex-align-center;
   justify-content: flex-end;
   gap: 0 25px;
@@ -11,7 +12,7 @@
     @include flex-align-center;
     list-style: none;
     height: 25px;
-    gap: 0 5px;
+    gap: 0 13px;
     margin-right: 20px;
 
     .common {
@@ -33,7 +34,6 @@
 
     .rotate {
       transform: rotate(180deg);
-      margin-right: 12px;
     }
 
     .active {

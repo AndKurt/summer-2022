@@ -8,7 +8,7 @@ export const RepoContainer = () => {
   const { userData } = useAppSelector((state) => state.userReducer);
   return (
     <div className={styles.repoContainer}>
-      <h2>Repositories ({userData?.public_repos})</h2>
+      {userData?.public_repos && <h2>Repositories ({userData?.public_repos})</h2>}
       <ul className={styles.listRepos}>
         {reposData &&
           reposData.map((repo) => (

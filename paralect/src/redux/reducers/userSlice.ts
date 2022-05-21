@@ -17,7 +17,11 @@ const initialState: IUserStore = {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    resetError(state) {
+      state.isError = '';
+    },
+  },
   extraReducers: {
     [fetchUser.pending.type]: (state) => {
       state.isLoading = true;

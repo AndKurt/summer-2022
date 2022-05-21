@@ -9,13 +9,16 @@ export const fetchUser = createAsyncThunk(
     try {
       const response = await axios.get(`${BASE_URL}${userName}`, {
         headers: {
-          Authorization: `Token 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`,
+          Authorization: `Token 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`,
         },
       });
       return response.data;
     } catch (error) {
       const err = error as AxiosError;
-      return rejectWithValue(err.response?.status);
+      if (err.response?.status === 404) {
+        return rejectWithValue('Not found');
+      }
+      return rejectWithValue('Another error');
     }
   }
 );
