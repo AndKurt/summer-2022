@@ -5,6 +5,7 @@
   flex-direction: column;
   max-width: 877px;
   width: 100%;
+  min-height: 500px;
 
   h2 {
     @include text32;
@@ -16,3 +17,53 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 800px) {
+  .repoContainer {
+    h2 {
+      @include text26;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .repoContainer {
+    min-height: inherit;
+    max-width: 1000px;
+    h2 {
+      @include text26;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .repoContainer {
+    h2 {
+      @include text22;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .repoContainer {
+    h2 {
+      text-align: center;
+      @include text16;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .repoContainer {
+    h2 {
+      text-align: center;
+      @include text14;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+} ;

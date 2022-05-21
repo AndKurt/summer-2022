@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header, InfoContainer, Loader, Pagination, RepoContainer } from '../../components';
 import { fetchRepos } from '../../redux/actions/reposActions';
@@ -9,6 +9,7 @@ import styles from './MainPage.module.scss';
 export const MainPage = () => {
   const dispatch = useAppDispatch();
   const navigation = useNavigate();
+  const [activePage, setActivePage] = useState(0);
   const { userName } = useParams();
   const {
     userData,
@@ -17,10 +18,15 @@ export const MainPage = () => {
   } = useAppSelector((state) => state.userReducer);
   const { isLoading: isLoaddingRepos } = useAppSelector((state) => state.reposReducer);
 
+  const setPaginationPage = (value: number) => {
+    setActivePage(value);
+  };
+
   useEffect(() => {
     console.log(1);
     if (userName) {
       dispatch(fetchUser(userName));
+      setActivePage(0);
     }
   }, [userName, dispatch]);
 
@@ -58,7 +64,7 @@ export const MainPage = () => {
           {<InfoContainer />}
           <RepoContainer />
         </div>
-        <Pagination />
+        <Pagination activePage={activePage} setPaginationPage={setPaginationPage} />
       </div>
     </main>
   );

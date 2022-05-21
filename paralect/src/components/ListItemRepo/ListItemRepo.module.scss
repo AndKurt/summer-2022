@@ -13,3 +13,36 @@
     margin-bottom: 16px;
   }
 }
+
+@media (max-width: 800px) {
+  .itemRepo {
+    @include text14;
+    padding: 18px 15px;
+    h4 {
+      @include text22;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .itemRepo {
+    @include text10;
+    padding: 10px 10px;
+
+    h4 {
+      @include text16;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .itemRepo {
+    margin-bottom: 7px;
+    padding: 7px 7px;
+
+    h4 {
+      @include text16;
+      margin-bottom: 7px;
+    }
+  }
+} ;

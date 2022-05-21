@@ -1,14 +1,59 @@
 @import '../../styles/variables.scss';
 
 .paginationContainer {
-  display: flex;
+  @include flex-align-center;
   justify-content: flex-end;
+  gap: 0 25px;
+  color: $grey;
+  padding-bottom: 25px;
 
   .pagination {
     @include flex-align-center;
     list-style: none;
     height: 25px;
-    gap: 0 16px;
-    margin-right: 13px;
+    gap: 0 5px;
+    margin-right: 20px;
+
+    .common {
+      @include flex-align-center;
+      @include text14;
+      cursor: pointer;
+      padding: 0 6px;
+      height: 25px;
+      transition: 0.3s;
+      border-radius: 3px;
+      vertical-align: middle;
+      transition: 0.3s;
+    }
+
+    .arrows,
+    .break {
+      cursor: pointer;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+      margin-right: 12px;
+    }
+
+    .active {
+      background: #0064eb;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .paginationContainer {
+    margin-top: 15px;
+    flex-direction: column;
+    gap: 10px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .paginationContainer {
+    @include text10;
+    margin-top: 5px;
   }
 }

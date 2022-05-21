@@ -16,3 +16,12 @@
     gap: 0 22px;
   }
 }
+
+@media (max-width: 800px) {
+  .header {
+    .container {
+      padding: 16px 13px;
+      gap: 0 5px;
+    }
+  }
+}

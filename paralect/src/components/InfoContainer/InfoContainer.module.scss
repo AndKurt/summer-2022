@@ -6,7 +6,7 @@
   max-width: 300px;
   width: 100%;
   padding: 12px 0;
-  max-height: 460px;
+  max-height: 700px;
 
   .userAvatar {
     border-radius: 50%;
@@ -40,3 +40,83 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .infoContainer {
+    max-width: 270px;
+    @include text14;
+    @include flex-column-center;
+
+    .userAvatar {
+      width: 200px;
+    }
+
+    .folowerContainer {
+      @include flex-column-center;
+
+      .followers {
+        @include text10;
+        @include flex-align-center;
+        max-width: 150px;
+        img {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    h3 {
+      @include text22;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .infoContainer {
+    @include text10;
+
+    h3 {
+      @include text16;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .infoContainer {
+    max-width: 250px;
+    @include text10;
+
+    .userAvatar {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      @include text16;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .infoContainer {
+    padding-bottom: 0;
+    .userAvatar {
+      margin-bottom: 5px;
+    }
+
+    a {
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      @include text16;
+      font-weight: bold;
+    }
+  }
+} ;

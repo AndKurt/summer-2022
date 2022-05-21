@@ -9,7 +9,7 @@ export const fetchUser = createAsyncThunk(
     try {
       const response = await axios.get(`${BASE_URL}${userName}`, {
         headers: {
-          Authorization: `Token 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`,
+          Authorization: `Token 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`,
         },
       });
       return response.data;

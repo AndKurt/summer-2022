@@ -30,3 +30,9 @@ main {
   background: $light-grey;
   @include flex-column-center;
 }
+
+@media (max-width: 6800px) {
+  main {
+    max-height: 500px;
+  }
+}

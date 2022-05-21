@@ -4,11 +4,18 @@ $grey: #808080;
 $light-grey: #f9f9f9;
 
 //Font-size
+@mixin text10 {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
 @mixin text14 {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
+
 @mixin text16 {
   font-weight: 400;
   font-size: 16px;
