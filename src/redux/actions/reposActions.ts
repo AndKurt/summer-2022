@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
-
-const BASE_URL = 'https://api.github.com/users/';
-const REPOS_PER_PAGE = 4;
+import { BASE_URL, REPOS_PER_PAGE } from '../../constants/api';
 
 interface IFetcRepos {
   userName: string;
@@ -15,11 +13,6 @@ export const fetchRepos = createAsyncThunk(
     try {
       const response = await axios.get(
         `${BASE_URL}${userName}/repos?per_page=${REPOS_PER_PAGE}&page=${currentPage}`
-        //{
-        //  headers: {
-        //    Authorization: `Token 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`,
-        //  },
-        //}
       );
       return response.data;
     } catch (error) {

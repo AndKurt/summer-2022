@@ -7,10 +7,12 @@ import { fetchUser } from '../../redux/actions/userAction';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import styles from './MainPage.module.scss';
 
+const NOT_FOUND_ERROR = 'Not found';
+
 export const MainPage = () => {
   const dispatch = useAppDispatch();
   const navigation = useNavigate();
-  const [activePage, setActivePage] = useState(0);
+  const [activePage, setActivePage] = useState<number>(0);
   const { userName } = useParams();
   const {
     userData,
@@ -18,13 +20,7 @@ export const MainPage = () => {
     isError,
   } = useAppSelector((state) => state.userReducer);
   const { isLoading: isLoaddingRepos } = useAppSelector((state) => state.reposReducer);
-
-  let userDataFromApi = useMemo(() => {
-    if (userData) {
-      return { ...userData };
-    }
-  }, [userData]) as IUserDataFromApi | null;
-
+  let userDataFromApi = useMemo(() => userData, [userData]) as IUserDataFromApi | null;
   const setPaginationPage = (value: number) => {
     setActivePage(value);
   };
@@ -39,17 +35,20 @@ export const MainPage = () => {
 
   useEffect(() => {
     if (isError) {
-      isError === 'Not found' ? navigation('/empty-state') : navigation('/not-found');
+      isError === NOT_FOUND_ERROR ? navigation('/empty-state') : navigation('/not-found');
     }
+  }, [navigation, isError]);
+
+  useEffect(() => {
     if (userName) {
-      if (userData) {
+      if (userDataFromApi) {
         dispatch(fetchRepos({ userName: userName }));
       }
       if (!userDataFromApi?.public_repos && userDataFromApi?.public_repos !== undefined) {
         navigation('/empty-state');
       }
     }
-  }, [userName, userData, dispatch, userDataFromApi, navigation, isError]);
+  }, [userName, dispatch, userDataFromApi, navigation]);
 
   return (
     <main className={styles.mainPage}>

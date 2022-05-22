@@ -13,7 +13,7 @@ export const EmptyStatePage = () => {
 
   useEffect(() => {
     dispatch(resetError());
-  });
+  }, [dispatch, resetError]);
 
   return (
     <main className={styles.emptyStatePage}>
